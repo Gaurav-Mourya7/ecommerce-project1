@@ -67,13 +67,14 @@ public class AppConfig implements WebMvcConfigurer {
             CorsConfiguration config = new CorsConfiguration();
 
 //            // ✅ Explicitly list frontend URLs
-//            config.setAllowedOrigins(Arrays.asList(
+            config.setAllowedOrigins(Arrays.asList(
+                    "https://ashion-sage.vercel.app"
 //                    "http://localhost:3000",
 //                    "http://127.0.0.1:3000",
 //                    "http://localhost:5501",
 //                    "http://127.0.0.1:5501"
 //
-//            ));
+            ));
 
             config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
             config.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type"));
