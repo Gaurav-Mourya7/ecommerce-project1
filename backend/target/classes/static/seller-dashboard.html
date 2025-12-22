@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seller Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans text-gray-900 bg-gray-50">
+  <header class="bg-white border-b">
+    <div class="max-w-[1200px] mx-auto px-5 h-16 flex items-center justify-between">
+      <a href="index.html" class="font-display text-2xl">Ashion</a>
+      <nav class="text-sm flex items-center gap-4">
+        <a href="seller-dashboard.html" class="font-medium text-black">Dashboard</a>
+        <a href="seller-products.html" class="hover:underline">Products</a>
+        <a href="seller-orders.html" class="hover:underline">Orders</a>
+      </nav>
+    </div>
+  </header>
+  <main class="py-6">
+    <div class="max-w-[1200px] mx-auto px-5">
+      <div id="sellerDashboardRoot"></div>
+    </div>
+  </main>
+
+  <script>
+    (function(){
+      try {
+        const t = localStorage.getItem('jwt');
+        if (!t) window.location.href = '/seller-login.html';
+      } catch(e) {}
+    })();
+  </script>
+  <script type="module" src="./js/api/http.js"></script>
+  <script type="module" src="./js/api/seller.js"></script>
+  <script type="module" src="./js/pages/seller-dashboard.js"></script>
+</body>
+</html>
+

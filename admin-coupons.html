@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Coupons</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans text-gray-900 bg-gray-50">
+  <header class="bg-white border-b">
+    <div class="max-w-[1200px] mx-auto px-5 h-16 flex items-center justify-between">
+      <a href="index.html" class="font-display text-2xl">Ashion</a>
+      <nav class="text-sm flex items-center gap-4">
+        <a href="admin-dashboard.html" class="hover:underline">Dashboard</a>
+        <a href="admin-coupons.html" class="font-medium text-black">Coupons</a>
+      </nav>
+    </div>
+  </header>
+  <main class="py-6">
+    <div class="max-w-[1200px] mx-auto px-5 space-y-6">
+      <section class="bg-white border rounded p-4">
+        <h1 class="text-xl font-semibold mb-3">Create coupon</h1>
+        <form id="couponForm" class="grid sm:grid-cols-[1fr_140px_120px] gap-2">
+          <input id="c_code" class="border rounded px-3 py-2" placeholder="Code"/>
+          <input id="c_discount" type="number" class="border rounded px-3 py-2" placeholder="Discount"/>
+          <button class="px-4 py-2 rounded bg-black text-white">Create</button>
+        </form>
+      </section>
+      <section class="bg-white border rounded p-4">
+        <h2 class="font-semibold mb-3">Coupons</h2>
+        <div id="couponList" class="space-y-2"></div>
+      </section>
+    </div>
+  </main>
+
+  <script type="module" src="./js/utils/guard.js"></script>
+  <script type="module" src="./js/api/http.js"></script>
+  <script type="module" src="./js/api/admin.js"></script>
+  <script type="module" src="./js/pages/admin-coupons.js"></script>
+</body>
+</html>
+
+

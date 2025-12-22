@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seller Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans text-gray-900">
+  <div class="min-h-screen grid place-items-center">
+    <div class="w-full max-w-lg border rounded p-6 bg-white shadow-sm">
+      <h1 class="text-xl font-semibold mb-4">Become a Seller</h1>
+      <div class="grid grid-cols-2 gap-2 mb-4">
+        <button id="tabSignup" class="px-3 py-2 rounded bg-black text-white">Signup</button>
+        <button id="tabLogin" class="px-3 py-2 rounded border">Login</button>
+      </div>
+      <!-- SIGNUP -->
+      <form id="createSellerForm" class="grid gap-2 mb-6">
+        <div class="grid grid-cols-2 gap-2">
+          <input id="s_sellerName" placeholder="Seller Name" class="border rounded px-3 py-2" required />
+          <input id="s_email" type="email" placeholder="Seller Email" class="border rounded px-3 py-2" required />
+        </div>
+        <div class="grid grid-cols-2 gap-2">
+          <input id="s_mobile" placeholder="Mobile" class="border rounded px-3 py-2" required />
+          <input id="s_gstin" placeholder="GSTIN (optional)" class="border rounded px-3 py-2" />
+        </div>
+        <fieldset class="border rounded p-3">
+          <legend class="text-sm font-medium">Business Details</legend>
+          <div class="grid grid-cols-2 gap-2 mt-2">
+            <input id="b_name" placeholder="Business Name" class="border rounded px-3 py-2" required />
+            <input id="b_email" type="email" placeholder="Business Email" class="border rounded px-3 py-2" />
+            <input id="b_mobile" placeholder="Business Mobile" class="border rounded px-3 py-2" />
+            <input id="b_address" placeholder="Business Address" class="border rounded px-3 py-2 col-span-2" />
+          </div>
+        </fieldset>
+        <fieldset class="border rounded p-3">
+          <legend class="text-sm font-medium">Bank Details</legend>
+          <div class="grid grid-cols-2 gap-2 mt-2">
+            <input id="bank_holder" placeholder="Account Holder Name" class="border rounded px-3 py-2" required />
+            <input id="bank_number" placeholder="Account Number" class="border rounded px-3 py-2" required />
+            <input id="bank_ifsc" placeholder="IFSC Code" class="border rounded px-3 py-2 col-span-2" required />
+          </div>
+        </fieldset>
+        <fieldset class="border rounded p-3">
+          <legend class="text-sm font-medium">Pickup Address</legend>
+          <div class="grid grid-cols-2 gap-2 mt-2">
+            <input id="p_name" placeholder="Contact Name" class="border rounded px-3 py-2" required />
+            <input id="p_mobile" placeholder="Contact Mobile" class="border rounded px-3 py-2" required />
+            <input id="p_address" placeholder="Address" class="border rounded px-3 py-2 col-span-2" required />
+            <input id="p_city" placeholder="City" class="border rounded px-3 py-2" required />
+            <input id="p_state" placeholder="State" class="border rounded px-3 py-2" required />
+            <input id="p_pin" placeholder="PIN Code" class="border rounded px-3 py-2" required />
+          </div>
+        </fieldset>
+        <button class="w-full px-4 py-2 rounded bg-black text-white">Create Seller</button>
+        <p id="createOut" class="text-xs text-gray-600"></p>
+      </form>
+      <!-- LOGIN -->
+      <form id="loginForm" class="grid gap-2 hidden">
+        <input id="l_email" type="email" placeholder="Seller Email" class="w-full border rounded px-3 py-2" required />
+        <div class="flex items-center gap-2">
+          <input id="l_otp" placeholder="OTP" class="flex-1 border rounded px-3 py-2" required />
+          <button id="btnLogin" class="px-3 py-2 border rounded">Login</button>
+        </div>
+        <div class="flex items-center justify-start">
+          <button id="btnSendOtp" type="button" class="text-sm underline">Send OTP</button>
+        </div>
+        <p id="loginOut" class="text-xs text-gray-600"></p>
+      </form>
+      <p class="text-sm mt-4">User login? <a href="login.html" class="underline">Go to customer login</a></p>
+    </div>
+  </div>
+  <script type="module" src="./js/api/http.js"></script>
+  <script type="module" src="./js/api/seller.js"></script>
+  <script type="module" src="./js/pages/seller-login.js"></script>
+  <script>
+    // simple tab toggle without module import
+    document.getElementById('tabSignup')?.addEventListener('click',()=>{
+      document.getElementById('createSellerForm')?.classList.remove('hidden');
+      document.getElementById('loginForm')?.classList.add('hidden');
+      document.getElementById('tabSignup')?.classList.add('bg-black','text-white');
+      document.getElementById('tabLogin')?.classList.remove('bg-black','text-white');
+    });
+    document.getElementById('tabLogin')?.addEventListener('click',()=>{
+      document.getElementById('createSellerForm')?.classList.add('hidden');
+      document.getElementById('loginForm')?.classList.remove('hidden');
+      document.getElementById('tabLogin')?.classList.add('bg-black','text-white');
+      document.getElementById('tabSignup')?.classList.remove('bg-black','text-white');
+    });
+  </script>
+</body>
+</html>
+
