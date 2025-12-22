@@ -1,0 +1,29 @@
+.admin-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+.stats-card {
+  background: #ffffff;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+  transition: transform 0.2s ease;
+}
+
+.stats-card:hover {
+  transform: translateY(-2px);
+}
+
+.data-table {
+  width: 100%;
+  overflow-x: auto;
+}
+
+@media (max-width: 768px) {
+  .data-table {
+    font-size: 0.875rem;
+  }
+}
