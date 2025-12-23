@@ -32,6 +32,7 @@ public class AppConfig implements WebMvcConfigurer {
                         management.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
 
+                        .requestMatchers("/actuator/health", "/actuator/health/**").permitAll()
                         // Public endpoints
                         .requestMatchers(HttpMethod.GET, "/home/categories").permitAll() // homepage display
                         .requestMatchers(HttpMethod.PATCH, "/sellers/verify/otp/**").permitAll()
@@ -68,7 +69,7 @@ public class AppConfig implements WebMvcConfigurer {
 
 //            // ✅ Explicitly list frontend URLs
             config.setAllowedOrigins(Arrays.asList(
-                    "https://ashion-sage.vercel.app"
+//                    "https://ashion-sage.vercel.app"
 //                    "http://localhost:3000",
 //                    "http://127.0.0.1:3000",
 //                    "http://localhost:5501",
