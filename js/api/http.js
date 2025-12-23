@@ -1,4 +1,5 @@
-const BASE_URL = "http://localhost:8080"; // backend ka base URL
+const BASE_URL = "https://ashion.up.railway.app";
+ // backend ka base URL
 
 function pickTokenForEndpoint(endpoint) {
   const raw = localStorage.getItem('jwt');
