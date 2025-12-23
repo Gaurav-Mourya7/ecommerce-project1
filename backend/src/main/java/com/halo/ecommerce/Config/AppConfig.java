@@ -69,7 +69,7 @@ public class AppConfig implements WebMvcConfigurer {
 
 //            // ✅ Explicitly list frontend URLs
             config.setAllowedOrigins(Arrays.asList(
-//                    "https://ashion-sage.vercel.app"
+                    "https://ashion-sage.vercel.app"
 //                    "http://localhost:3000",
 //                    "http://127.0.0.1:3000",
 //                    "http://localhost:5501",
