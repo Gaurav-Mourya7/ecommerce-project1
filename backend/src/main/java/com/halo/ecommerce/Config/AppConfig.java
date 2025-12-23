@@ -32,7 +32,7 @@ public class AppConfig implements WebMvcConfigurer {
                         management.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
 
-                        .requestMatchers("/actuator/health", "/actuator/health/**").permitAll()
+                        .requestMatchers("/actuator/**").permitAll()
                         // Public endpoints
                         .requestMatchers(HttpMethod.GET, "/home/categories").permitAll() // homepage display
                         .requestMatchers(HttpMethod.PATCH, "/sellers/verify/otp/**").permitAll()

@@ -28,7 +28,8 @@ public class JwtTokenValidator extends OncePerRequestFilter {
     protected boolean shouldNotFilter(HttpServletRequest request) {
         String path = request.getServletPath();
         // skip JWT parsing for OTP verification endpoint
-        return path.startsWith("/sellers/verify/otp");
+        return path.startsWith("/sellers/verify/otp")
+                || path.startsWith("/actuator");
     }
 
     @Override
